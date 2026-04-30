@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Sport Portal</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!-- ── HEADER ── -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-box">SPORT</span><span class="logo-text">HUB</span>
+    </div>
+    <div class="search-wrap">
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" class="search-input" placeholder="Pesquisar notícias, jogadores, equipas…" id="searchInput">
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" title="Alternar modo">
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        <span class="toggle-label" id="themeLabel">🌙</span>
+      </button>
+      <div class="user-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV TABS -->
+  <nav class="nav-tabs">
+    <div class="nav-inner">
+      <button class="nav-btn active" data-tab="inicio">Início</button>
+      <button class="nav-btn" data-tab="futebol">⚽ Futebol</button>
+      <button class="nav-btn" data-tab="nba">🏀 NBA</button>
+      <button class="nav-btn" data-tab="f1">🏎 F1</button>
+      <button class="nav-btn" data-tab="outros">🏆 Outros</button>
+      <button class="nav-btn" data-tab="noticias">📰 Notícias</button>
+      <button class="nav-btn" data-tab="rumores">🔄 Rumores</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── TICKER ── -->
+<div class="ticker-bar">
+  <div class="ticker-label"><span class="live-dot"></span>LIVE</div>
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack">
+      <!-- duplicated for seamless loop -->
+      <span class="tick-item"><b class="tick-league">LaLiga</b> Real Madrid <span class="tick-score">2–1</span> Barcelona <span class="tick-live">LIVE 67'</span></span>
+      <span class="tick-item"><b class="tick-league">NBA</b> Lakers <span class="tick-score">98–102</span> Celtics <span class="tick-live">LIVE Q3</span></span>
+      <span class="tick-item"><b class="tick-league">F1</b> GP Mónaco — VER P1 | HAM P2 <span class="tick-status">AMANHÃ</span></span>
+      <span class="tick-item"><b class="tick-league">PL</b> Man City <span class="tick-score">1–1</span> Arsenal <span class="tick-live">LIVE 45'</span></span>
+      <span class="tick-item"><b class="tick-league">NBA</b> Warriors <span class="tick-score">110–107</span> Nuggets <span class="tick-status">FINAL</span></span>
+      <span class="tick-item"><b class="tick-league">LaLiga</b> Atlético <span class="tick-score">3–0</span> Sevilla <span class="tick-status">FINAL</span></span>
+      <span class="tick-item"><b class="tick-league">F1</b> GP Espanha — Qualificação <span class="tick-status">SÁB 14:00</span></span>
+      <!-- duplicate -->
+      <span class="tick-item"><b class="tick-league">LaLiga</b> Real Madrid <span class="tick-score">2–1</span> Barcelona <span class="tick-live">LIVE 67'</span></span>
+      <span class="tick-item"><b class="tick-league">NBA</b> Lakers <span class="tick-score">98–102</span> Celtics <span class="tick-live">LIVE Q3</span></span>
+      <span class="tick-item"><b class="tick-league">F1</b> GP Mónaco — VER P1 | HAM P2 <span class="tick-status">AMANHÃ</span></span>
+      <span class="tick-item"><b class="tick-league">PL</b> Man City <span class="tick-score">1–1</span> Arsenal <span class="tick-live">LIVE 45'</span></span>
+      <span class="tick-item"><b class="tick-league">NBA</b> Warriors <span class="tick-score">110–107</span> Nuggets <span class="tick-status">FINAL</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     PÁGINAS / ABAS
+     ════════════════════════════════════════════════════════════ -->
+<main class="main-wrap">
+
+  <!-- ═══════ ABA: INÍCIO ═══════ -->
+  <section class="tab-page active" id="tab-inicio">
+    <div class="layout-grid">
+      <div class="col-main">
+
+        <!-- Hero Slider -->
+        <div class="hero-slider" id="heroSlider">
+          <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200&q=80')">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="badge badge-green">FUTEBOL</span>
+              <h1>Mbappé assina hat-trick histórico: Real Madrid elimina Barcelona da Champions</h1>
+              <p>Com três golos em 23 minutos, o avançado francês brilhou numa noite inesquecível</p>
+              <div class="hero-meta"><span>Há 12 minutos</span><span class="dot">•</span><span>Carlos Mendes</span></div>
+            </div>
+          </div>
+          <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200&q=80')">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="badge badge-orange">NBA</span>
+              <h1>LeBron James iguala recorde de Jordan: 35.000 pontos na carreira</h1>
+              <p>Uma das maiores noites na história da NBA com vitória dos Lakers por 124–118</p>
+              <div class="hero-meta"><span>Há 45 minutos</span><span class="dot">•</span><span>Ana Ferreira</span></div>
+            </div>
+          </div>
+          <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80')">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+              <span class="badge badge-red">F1</span>
+              <h1>Verstappen domina Mónaco: Red Bull na pole por 0.043s sobre Hamilton</h1>
+              <p>As ruas do Principado foram palco de uma batalha épica entre os maiores rivais</p>
+              <div class="hero-meta"><span>Há 1 hora</span><span class="dot">•</span><span>Pedro Santos</span></div>
+            </div>
+          </div>
+          <div class="hero-dots" id="heroDots">
+            <button class="hero-dot active" data-idx="0"></button>
+            <button class="hero-dot" data-idx="1"></button>
+            <button class="hero-dot" data-idx="2"></button>
+          </div>
+        </div>
+
+        <!-- News Grid -->
+        <div class="section-header">
+          <h2 class="section-title">Últimas Notícias</h2>
+          <a href="#" class="see-all">Ver todas →</a>
+        </div>
+        <div class="news-grid">
+          <div class="news-card" onclick="openArticle()">
+            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&q=80" alt="">
+            <div class="news-info">
+              <span class="badge badge-green">FUTEBOL</span>
+              <h3>Sporting fecha contratação de avançado sérvio por €45M</h3>
+              <span class="news-time">Há 2h</span>
+            </div>
+          </div>
+          <div class="news-card" onclick="openArticle()">
+            <img src="https://images.unsplash.com/photo-1518604964608-48cecd9a2b81?w=400&q=80" alt="">
+            <div class="news-info">
+              <span class="badge badge-yellow">RUMORES</span>
+              <h3>Salah próximo de abandonar Liverpool: PSG prepara proposta de €120M</h3>
+              <span class="news-time">Há 3h</span>
+            </div>
+          </div>
+          <div class="news-card" onclick="openArticle()">
+            <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80" alt="">
+            <div class="news-info">
+              <span class="badge badge-orange">NBA</span>
+              <h3>Stephen Curry renova contrato com os Warriors até 2028</h3>
+              <span class="news-time">Há 4h</span>
+            </div>
+          </div>
+          <div class="news-card" onclick="openArticle()">
+            <img src="https://images.unsplash.com/photo-1504707748692-419802426769?w=400&q=80" alt="">
+            <div class="news-info">
+              <span class="badge badge-red">F1</span>
+              <h3>Ferrari confirma novo chassis para o GP do Canadá após acidentes</h3>
+              <span class="news-time">Há 5h</span>
+            </div>
+          </div>
+          <div class="news-card" onclick="openArticle()">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" alt="">
+            <div class="news-info">
+              <span class="badge badge-green">FUTEBOL</span>
+              <h3>Benfica vence Sporting 2–1 no Derby de Lisboa em jogo dramático</h3>
+              <span class="news-time">Há 6h</span>
+            </div>
+          </div>
+          <div class="news-card" onclick="openArticle()">
+            <img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=400&q=80" alt="">
+            <div class="news-info">
+              <span class="badge badge-blue">OUTROS</span>
+              <h3>Nadal anuncia aposentadoria definitiva após Roland Garros 2026</h3>
+              <span class="news-time">Há 7h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="section-header" style="margin-top:2rem">
+          <h2 class="section-title">Classificações & Estatísticas</h2>
+        </div>
+        <div class="stats-panel">
+          <div class="stats-tabs">
+            <button class="stab active" data-stab="football">⚽ LaLiga</button>
+            <button class="stab" data-stab="nba">🏀 NBA</button>
+            <button class="stab" data-stab="f1">🏎 F1</button>
+          </div>
+          <div class="stats-body">
+            <!-- Football Table -->
+            <div class="stab-content active" id="stab-football">
+              <table class="stats-table">
+                <thead><tr><th>#</th><th class="left">Clube</th><th>J</th><th>GD</th><th class="red">Pts</th></tr></thead>
+                <tbody>
+                  <tr><td class="green bold">1</td><td class="left bold">Real Madrid</td><td>32</td><td class="green">+52</td><td class="red bold">86</td></tr>
+                  <tr><td class="green bold">2</td><td class="left bold">Barcelona</td><td>32</td><td class="green">+41</td><td class="red bold">79</td></tr>
+                  <tr><td class="green bold">3</td><td class="left bold">Atlético</td><td>32</td><td class="green">+22</td><td class="red bold">68</td></tr>
+                  <tr><td class="bold">4</td><td class="left">Villarreal</td><td>32</td><td class="green">+14</td><td class="red bold">62</td></tr>
+                  <tr><td class="bold">5</td><td class="left">Athletic</td><td>32</td><td class="green">+9</td><td class="red bold">58</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- NBA Stats -->
+            <div class="stab-content" id="stab-nba">
+              <table class="stats-table">
+                <thead><tr><th>#</th><th class="left">Jogador</th><th>PPG</th><th>RPG</th><th>APG</th></tr></thead>
+                <tbody>
+                  <tr><td class="orange bold">1</td><td class="left bold">Luka Dončić <span class="team-tag">Mavs</span></td><td class="orange bold">34.2</td><td>9.1</td><td>9.8</td></tr>
+                  <tr><td class="orange bold">2</td><td class="left bold">Giannis A. <span class="team-tag">Bucks</span></td><td class="orange bold">31.7</td><td>11.5</td><td>5.9</td></tr>
+                  <tr><td class="orange bold">3</td><td class="left bold">Joel Embiid <span class="team-tag">76ers</span></td><td class="orange bold">30.1</td><td>10.8</td><td>4.2</td></tr>
+                  <tr><td class="bold">4</td><td class="left bold">LeBron James <span class="team-tag">Lakers</span></td><td class="orange bold">28.9</td><td>8.3</td><td>7.4</td></tr>
+                  <tr><td class="bold">5</td><td class="left bold">Kevin Durant <span class="team-tag">Suns</span></td><td class="orange bold">28.1</td><td>7.1</td><td>5.0</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- F1 Standings -->
+            <div class="stab-content" id="stab-f1">
+              <table class="stats-table">
+                <thead><tr><th>#</th><th class="left">Piloto</th><th>Equipa</th><th>V</th><th class="red">Pts</th></tr></thead>
+                <tbody>
+                  <tr><td class="gold bold">1</td><td class="left bold">Max Verstappen</td><td>Red Bull</td><td class="green bold">5</td><td class="red bold">142</td></tr>
+                  <tr><td class="bold">2</td><td class="left bold">Lewis Hamilton</td><td>Mercedes</td><td class="green bold">3</td><td class="red bold">118</td></tr>
+                  <tr><td class="bold">3</td><td class="left bold">Charles Leclerc</td><td>Ferrari</td><td class="green bold">2</td><td class="red bold">102</td></tr>
+                  <tr><td class="bold">4</td><td class="left bold">Lando Norris</td><td>McLaren</td><td class="green bold">1</td><td class="red bold">94</td></tr>
+                  <tr><td class="bold">5</td><td class="left bold">Carlos Sainz</td><td>Ferrari</td><td class="green bold">1</td><td class="red bold">87</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /col-main -->
+
+      <!-- ── SIDEBAR ── -->
+      <aside class="col-side">
+
+        <!-- Breaking News -->
+        <div class="side-card">
+          <div class="side-card-head red-head">⚡ Última Hora</div>
+          <ul class="breaking-list">
+            <li><span class="arrow">›</span> Cristiano Ronaldo anuncia candidatura à presidência da UEFA</li>
+            <li><span class="arrow">›</span> NBA confirma expansão para Madrid e Londres em 2028</li>
+            <li><span class="arrow">›</span> Alonso admite continuar na F1 até 2027</li>
+            <li><span class="arrow">›</span> PSG vai construir novo estádio com capacidade para 80.000</li>
+          </ul>
+        </div>
+
+        <!-- Transfer Rumors -->
+        <div class="side-card">
+          <div class="side-card-head yellow-head">🔄 Rumores de Transferências</div>
+          <div class="rumors-list">
+            <div class="rumor-item">
+              <div class="rumor-top"><span class="rumor-name">K. Mbappé</span><span class="rumor-prob high">72%</span></div>
+              <div class="rumor-clubs">Real Madrid <span class="arrow-red">→</span> Man City</div>
+              <div class="rumor-bar"><div class="rumor-fill high" style="width:72%"></div></div>
+            </div>
+            <div class="rumor-item">
+              <div class="rumor-top"><span class="rumor-name">M. Salah</span><span class="rumor-prob med">58%</span></div>
+              <div class="rumor-clubs">Liverpool <span class="arrow-red">→</span> PSG</div>
+              <div class="rumor-bar"><div class="rumor-fill med" style="width:58%"></div></div>
+            </div>
+            <div class="rumor-item">
+              <div class="rumor-top"><span class="rumor-name">R. Leão</span><span class="rumor-prob med">44%</span></div>
+              <div class="rumor-clubs">AC Milan <span class="arrow-red">→</span> Chelsea</div>
+              <div class="rumor-bar"><div class="rumor-fill low" style="width:44%"></div></div>
+            </div>
+            <div class="rumor-item">
+              <div class="rumor-top"><span class="rumor-name">P. Foden</span><span class="rumor-prob low">31%</span></div>
+              <div class="rumor-clubs">Man City <span class="arrow-red">→</span> Bayern</div>
+              <div class="rumor-bar"><div class="rumor-fill low" style="width:31%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Most Read -->
+        <div class="side-card">
+          <div class="side-card-head dark-head">🔥 Mais Lidas</div>
+          <ol class="most-read-list">
+            <li><span class="mr-num">1</span><span>Sporting fecha contratação de avançado sérvio por €45M</span></li>
+            <li><span class="mr-num">2</span><span>Salah próximo de abandonar Liverpool: PSG prepara proposta</span></li>
+            <li><span class="mr-num">3</span><span>Stephen Curry renova contrato com os Warriors até 2028</span></li>
+            <li><span class="mr-num">4</span><span>Benfica vence Sporting 2–1 no Derby de Lisboa dramático</span></li>
+          </ol>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════ ABA: FUTEBOL ═══════ -->
+  <section class="tab-page" id="tab-futebol">
+    <div class="sport-hero" style="background-image:url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1400&q=80')">
+      <div class="sport-hero-overlay"></div>
+      <div class="sport-hero-text">
+        <span class="badge badge-green">FUTEBOL</span>
+        <h1>Futebol Mundial</h1>
+        <p>Champions League, LaLiga, Premier League, Bundesliga e muito mais</p>
+      </div>
+    </div>
+    <div class="layout-grid" style="margin-top:1.5rem">
+      <div class="col-main">
+        <div class="section-header"><h2 class="section-title">Galeria de Imagens</h2></div>
+        <div class="img-gallery">
+          <div class="gallery-item big"><img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=800&q=80" alt="Futebol"><div class="gal-label">Real Madrid vs Barcelona — Champions League</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Futebol"><div class="gal-label">Derby de Lisboa — Benfica vs Sporting</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=600&q=80" alt="Futebol"><div class="gal-label">Estádio Bernabéu — Noite Europeia</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518604964608-48cecd9a2b81?w=600&q=80" alt="Futebol"><div class="gal-label">Premier League — Anfield em delírio</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=600&q=80" alt="Futebol"><div class="gal-label">Copa do Mundo 2026 — Seleção em campo</div></div>
+        </div>
+        <div class="section-header" style="margin-top:2rem"><h2 class="section-title">Notícias de Futebol</h2></div>
+        <div class="news-grid">
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-green">CHAMPIONS</span><h3>Mbappé marca hat-trick histórico no Clássico da Champions</h3><span class="news-time">Há 1h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-green">LIGA PORT.</span><h3>Benfica vence Sporting 2–1 no Derby de Lisboa</h3><span class="news-time">Há 3h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1518604964608-48cecd9a2b81?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-green">PREMIER</span><h3>Arsenal iguala City no topo após vitória sobre o Chelsea</h3><span class="news-time">Há 5h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-yellow">RUMORES</span><h3>Salah prepara saída: PSG faz proposta histórica de €120M</h3><span class="news-time">Há 6h</span></div></div>
+        </div>
+      </div>
+      <aside class="col-side">
+        <div class="side-card">
+          <div class="side-card-head red-head">📊 LaLiga — Top Marcadores</div>
+          <table class="stats-table" style="margin:0.5rem">
+            <thead><tr><th>#</th><th class="left">Jogador</th><th>Golos</th></tr></thead>
+            <tbody>
+              <tr><td class="gold bold">1</td><td class="left bold">Mbappé</td><td class="red bold">27</td></tr>
+              <tr><td class="bold">2</td><td class="left bold">Vinícius Jr.</td><td class="red bold">22</td></tr>
+              <tr><td class="bold">3</td><td class="left bold">Lewandowski</td><td class="red bold">20</td></tr>
+              <tr><td class="bold">4</td><td class="left bold">Griezmann</td><td class="red bold">17</td></tr>
+              <tr><td class="bold">5</td><td class="left bold">Bellingham</td><td class="red bold">15</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="side-card">
+          <div class="side-card-head yellow-head">🏆 Próximos Jogos</div>
+          <ul class="breaking-list">
+            <li><span class="arrow">›</span> Man City vs PSG — Qui 20:45</li>
+            <li><span class="arrow">›</span> Benfica vs Porto — Sex 21:15</li>
+            <li><span class="arrow">›</span> Barça vs Atlético — Sáb 16:00</li>
+            <li><span class="arrow">›</span> Inter vs Juventus — Dom 18:00</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════ ABA: NBA ═══════ -->
+  <section class="tab-page" id="tab-nba">
+    <div class="sport-hero" style="background-image:url('https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1400&q=80')">
+      <div class="sport-hero-overlay" style="background:linear-gradient(to top, #c05c00ee, #00000066)"></div>
+      <div class="sport-hero-text">
+        <span class="badge badge-orange">NBA</span>
+        <h1>NBA 2025–26</h1>
+        <p>Playoffs, estatísticas, recordes e as melhores jogadas da liga</p>
+      </div>
+    </div>
+    <div class="layout-grid" style="margin-top:1.5rem">
+      <div class="col-main">
+        <div class="section-header"><h2 class="section-title">Galeria NBA</h2></div>
+        <div class="img-gallery">
+          <div class="gallery-item big"><img src="https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=800&q=80" alt="NBA"><div class="gal-label">LeBron James — 35.000 Pontos Históricos</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="NBA"><div class="gal-label">Golden State Warriors — Chase Center</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=600&q=80" alt="NBA"><div class="gal-label">Boston Celtics — TD Garden em festa</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1518019671582-55004db9e0a2?w=600&q=80" alt="NBA"><div class="gal-label">Playoffs 2026 — Melhores momentos</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=600&q=80" alt="NBA"><div class="gal-label">Dunk Contest All-Star Weekend</div></div>
+        </div>
+        <div class="section-header" style="margin-top:2rem"><h2 class="section-title">Notícias NBA</h2></div>
+        <div class="news-grid">
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-orange">NBA</span><h3>LeBron atinge 35.000 pontos e iguala Jordan numa noite histórica</h3><span class="news-time">Há 45min</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-orange">NBA</span><h3>Curry renova com Warriors até 2028 — contrato de $250M</h3><span class="news-time">Há 2h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-orange">PLAYOFFS</span><h3>Celtics vencem Bucks e avançam para as meias-finais</h3><span class="news-time">Há 4h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1608245449230-4ac19066d2d0?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-orange">NBA</span><h3>Wembanyama lidera Spurs com 42 pontos e 12 ressaltos</h3><span class="news-time">Há 6h</span></div></div>
+        </div>
+      </div>
+      <aside class="col-side">
+        <div class="side-card">
+          <div class="side-card-head orange-head">📊 Médias da Temporada</div>
+          <table class="stats-table" style="margin:0.5rem">
+            <thead><tr><th>#</th><th class="left">Jogador</th><th>PPG</th></tr></thead>
+            <tbody>
+              <tr><td class="gold bold">1</td><td class="left bold">Luka Dončić</td><td class="orange bold">34.2</td></tr>
+              <tr><td class="bold">2</td><td class="left bold">Giannis A.</td><td class="orange bold">31.7</td></tr>
+              <tr><td class="bold">3</td><td class="left bold">Joel Embiid</td><td class="orange bold">30.1</td></tr>
+              <tr><td class="bold">4</td><td class="left bold">LeBron James</td><td class="orange bold">28.9</td></tr>
+              <tr><td class="bold">5</td><td class="left bold">Kevin Durant</td><td class="orange bold">28.1</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="side-card">
+          <div class="side-card-head dark-head">🏆 Playoffs — Próximos Jogos</div>
+          <ul class="breaking-list">
+            <li><span class="arrow">›</span> Lakers vs Nuggets — Qui 20:30</li>
+            <li><span class="arrow">›</span> Celtics vs Bucks — Sex 21:00</li>
+            <li><span class="arrow">›</span> Warriors vs Suns — Sáb 20:00</li>
+            <li><span class="arrow">›</span> Mavs vs Clippers — Dom 19:30</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════ ABA: F1 ═══════ -->
+  <section class="tab-page" id="tab-f1">
+    <div class="sport-hero" style="background-image:url('https://images.unsplash.com/photo-1504707748692-419802426769?w=1400&q=80')">
+      <div class="sport-hero-overlay" style="background:linear-gradient(to top, #7f0000ee, #00000066)"></div>
+      <div class="sport-hero-text">
+        <span class="badge badge-red">F1</span>
+        <h1>Fórmula 1 — Temporada 2026</h1>
+        <p>Verstappen lidera com 5 vitórias, Hamilton a 24 pontos de distância</p>
+      </div>
+    </div>
+    <div class="layout-grid" style="margin-top:1.5rem">
+      <div class="col-main">
+        <div class="section-header"><h2 class="section-title">Galeria F1</h2></div>
+        <div class="img-gallery">
+          <div class="gallery-item big"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="F1"><div class="gal-label">GP Mónaco 2026 — Verstappen na Pole Position</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504707748692-419802426769?w=600&q=80" alt="F1"><div class="gal-label">Ferrari SF-26 — Pit Stop Perfeito em Barcelon</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=600&q=80" alt="F1"><div class="gal-label">Hamilton — Mercedes W17 em alta velocidade</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?w=600&q=80" alt="F1"><div class="gal-label">Lando Norris — McLaren MCL60 em Silverstone</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1616787490254-c5d23d87e1ba?w=600&q=80" alt="F1"><div class="gal-label">Pódio GP Brasil — Leclerc, Verstappen, Norris</div></div>
+        </div>
+        <div class="section-header" style="margin-top:2rem"><h2 class="section-title">Notícias F1</h2></div>
+        <div class="news-grid">
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-red">F1</span><h3>Verstappen vence GP Mónaco após batalha épica com Hamilton</h3><span class="news-time">Há 1h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1504707748692-419802426769?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-red">F1</span><h3>Ferrari confirma novo chassis para GP do Canadá após acidentes</h3><span class="news-time">Há 3h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-red">F1</span><h3>Hamilton rejeita proposta da Ferrari e renova com Mercedes</h3><span class="news-time">Há 5h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1541348263662-e068662d82af?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-yellow">RUMORES</span><h3>Norris está a considerar deixar McLaren no final de 2026</h3><span class="news-time">Há 7h</span></div></div>
+        </div>
+      </div>
+      <aside class="col-side">
+        <div class="side-card">
+          <div class="side-card-head red-head">🏎 Classificação Pilotos</div>
+          <table class="stats-table" style="margin:0.5rem">
+            <thead><tr><th>#</th><th class="left">Piloto</th><th class="red">Pts</th></tr></thead>
+            <tbody>
+              <tr><td class="gold bold">1</td><td class="left bold">Verstappen</td><td class="red bold">142</td></tr>
+              <tr><td class="bold">2</td><td class="left bold">Hamilton</td><td class="red bold">118</td></tr>
+              <tr><td class="bold">3</td><td class="left bold">Leclerc</td><td class="red bold">102</td></tr>
+              <tr><td class="bold">4</td><td class="left bold">Norris</td><td class="red bold">94</td></tr>
+              <tr><td class="bold">5</td><td class="left bold">Sainz</td><td class="red bold">87</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="side-card">
+          <div class="side-card-head dark-head">📅 Próximas Corridas</div>
+          <ul class="breaking-list">
+            <li><span class="arrow">›</span> GP Mónaco — 25 Mai</li>
+            <li><span class="arrow">›</span> GP Canadá — 15 Jun</li>
+            <li><span class="arrow">›</span> GP Espanha — 22 Jun</li>
+            <li><span class="arrow">›</span> GP Áustria — 29 Jun</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════ ABA: OUTROS ═══════ -->
+  <section class="tab-page" id="tab-outros">
+    <div class="sport-hero" style="background-image:url('https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=1400&q=80')">
+      <div class="sport-hero-overlay" style="background:linear-gradient(to top, #1a4a8aee, #00000066)"></div>
+      <div class="sport-hero-text">
+        <span class="badge badge-blue">OUTROS DESPORTOS</span>
+        <h1>Desporto Mundial</h1>
+        <p>Ténis, Golf, Atletismo, Rugby, Ciclismo e muito mais</p>
+      </div>
+    </div>
+    <div class="layout-grid" style="margin-top:1.5rem">
+      <div class="col-main">
+        <div class="section-header"><h2 class="section-title">Galeria de Desportos</h2></div>
+        <div class="img-gallery">
+          <div class="gallery-item big"><img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&q=80" alt="Ténis"><div class="gal-label">Roland Garros 2026 — Nadal despede-se do court central</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&q=80" alt="Golf"><div class="gal-label">Masters Augusta — Último round dramático</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Atletismo"><div class="gal-label">Atletismo — 100m rasos nos Jogos Olímpicos</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=600&q=80" alt="Ciclismo"><div class="gal-label">Tour de France 2026 — Etapa dos Pirenéus</div></div>
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Rugby"><div class="gal-label">Rugby World Cup — Final épica no Japão</div></div>
+        </div>
+        <div class="section-header" style="margin-top:2rem"><h2 class="section-title">Notícias de Outros Desportos</h2></div>
+        <div class="news-grid">
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-blue">TÉNIS</span><h3>Nadal anuncia aposentadoria definitiva após Roland Garros 2026</h3><span class="news-time">Há 2h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-blue">GOLF</span><h3>Rory McIlroy completa Grand Slam no Augusta National</h3><span class="news-time">Há 4h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-blue">CICLISMO</span><h3>Vingegaard conquista 3.ª vitória consecutiva no Tour de France</h3><span class="news-time">Há 5h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-blue">ATLETISMO</span><h3>Atleta queniana quebra recorde mundial dos 10.000m em silêncio</h3><span class="news-time">Há 8h</span></div></div>
+        </div>
+      </div>
+      <aside class="col-side">
+        <div class="side-card">
+          <div class="side-card-head blue-head">🎾 Ranking ATP Top 5</div>
+          <table class="stats-table" style="margin:0.5rem">
+            <thead><tr><th>#</th><th class="left">Tenista</th><th>Pts</th></tr></thead>
+            <tbody>
+              <tr><td class="gold bold">1</td><td class="left bold">Alcaraz</td><td class="blue bold">9820</td></tr>
+              <tr><td class="bold">2</td><td class="left bold">Sinner</td><td class="blue bold">9340</td></tr>
+              <tr><td class="bold">3</td><td class="left bold">Djokovic</td><td class="blue bold">8100</td></tr>
+              <tr><td class="bold">4</td><td class="left bold">Medvedev</td><td class="blue bold">7500</td></tr>
+              <tr><td class="bold">5</td><td class="left bold">Zverev</td><td class="blue bold">6200</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════ ABA: NOTÍCIAS ═══════ -->
+  <section class="tab-page" id="tab-noticias">
+    <div class="page-title-bar"><h1>📰 Todas as Notícias</h1></div>
+    <div class="layout-grid">
+      <div class="col-main">
+        <div class="news-grid">
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-green">FUTEBOL</span><h3>Mbappé marca hat-trick histórico no Clássico da Champions</h3><span class="news-time">Há 12min</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-orange">NBA</span><h3>LeBron atinge 35.000 pontos e iguala recorde de Jordan</h3><span class="news-time">Há 45min</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-red">F1</span><h3>Verstappen domina Mónaco: pole por 0.043s sobre Hamilton</h3><span class="news-time">Há 1h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-green">FUTEBOL</span><h3>Sporting fecha contratação de avançado sérvio por €45M</h3><span class="news-time">Há 2h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-green">FUTEBOL</span><h3>Benfica vence Sporting 2–1 no Derby de Lisboa dramático</h3><span class="news-time">Há 6h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-blue">TÉNIS</span><h3>Nadal anuncia aposentadoria após Roland Garros 2026</h3><span class="news-time">Há 7h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1577471488278-16eec37ffcc2?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-orange">NBA</span><h3>Curry renova contrato com Warriors até 2028 — $250M</h3><span class="news-time">Há 8h</span></div></div>
+          <div class="news-card" onclick="openArticle()"><img src="https://images.unsplash.com/photo-1504707748692-419802426769?w=400&q=80" alt=""><div class="news-info"><span class="badge badge-red">F1</span><h3>Ferrari confirma novo chassis para o GP do Canadá</h3><span class="news-time">Há 9h</span></div></div>
+        </div>
+      </div>
+      <aside class="col-side">
+        <div class="side-card"><div class="side-card-head red-head">⚡ Última Hora</div>
+          <ul class="breaking-list">
+            <li><span class="arrow">›</span> Ronaldo candidata-se à presidência da UEFA</li>
+            <li><span class="arrow">›</span> NBA confirma expansão para Madrid em 2028</li>
+            <li><span class="arrow">›</span> Alonso admite continuar na F1 até 2027</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══════ ABA: RUMORES ═══════ -->
+  <section class="tab-page" id="tab-rumores">
+    <div class="page-title-bar"><h1>🔄 Rumores de Transferências</h1></div>
+    <div class="layout-grid">
+      <div class="col-main">
+        <div class="rumors-grid">
+          <div class="rumor-card">
+            <img src="https://images.unsplash.com/photo-1518604964608-48cecd9a2b81?w=600&q=80" alt="">
+            <div class="rumor-card-body">
+              <span class="badge badge-yellow">RUMOR QUENTE 🔥</span>
+              <h3>Kylian Mbappé — Real Madrid → Manchester City</h3>
+              <p>O City está disposto a pagar €180M pela estrela francesa. Negociações avançadas segundo fontes próximas do clube inglês.</p>
+              <div class="rumor-prob-big"><span>Probabilidade</span><div class="rumor-bar-big"><div class="rumor-fill high" style="width:72%"></div></div><span class="prob-num high">72%</span></div>
+            </div>
+          </div>
+          <div class="rumor-card">
+            <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80" alt="">
+            <div class="rumor-card-body">
+              <span class="badge badge-yellow">RUMOR</span>
+              <h3>Mohamed Salah — Liverpool → Paris Saint-Germain</h3>
+              <p>O PSG prepara proposta recorde de €120M. Salah tem contrato até 2026 e ainda não renovou.</p>
+              <div class="rumor-prob-big"><span>Probabilidade</span><div class="rumor-bar-big"><div class="rumor-fill med" style="width:58%"></div></div><span class="prob-num med">58%</span></div>
+            </div>
+          </div>
+          <div class="rumor-card">
+            <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="">
+            <div class="rumor-card-body">
+              <span class="badge badge-yellow">RUMOR</span>
+              <h3>Rafael Leão — AC Milan → Chelsea FC</h3>
+              <p>O Chelsea está interessado no avançado português após uma temporada de grande nível no Milan.</p>
+              <div class="rumor-prob-big"><span>Probabilidade</span><div class="rumor-bar-big"><div class="rumor-fill low" style="width:44%"></div></div><span class="prob-num low">44%</span></div>
+            </div>
+          </div>
+          <div class="rumor-card">
+            <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=600&q=80" alt="">
+            <div class="rumor-card-body">
+              <span class="badge badge-yellow">RUMOR FRIO</span>
+              <h3>Phil Foden — Manchester City → Bayern Munich</h3>
+              <p>O Bayern inclui Foden nos seus planos para 2027, mas o City não está disposto a negociar.</p>
+              <div class="rumor-prob-big"><span>Probabilidade</span><div class="rumor-bar-big"><div class="rumor-fill low" style="width:31%"></div></div><span class="prob-num low">31%</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="col-side">
+        <div class="side-card"><div class="side-card-head yellow-head">💰 Maiores Negócios 2026</div>
+          <ul class="breaking-list">
+            <li><span class="arrow">›</span> Bellingham — Madrid: €180M</li>
+            <li><span class="arrow">›</span> Vinicius Jr. — Madrid: €160M</li>
+            <li><span class="arrow">›</span> Pedri — Barça: €140M</li>
+            <li><span class="arrow">›</span> Gavi — Barça: €130M</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main><!-- /main-wrap -->
+
+<!-- ── ARTICLE OVERLAY ── -->
+<div class="article-overlay" id="articleOverlay">
+  <div class="article-modal">
+    <button class="article-back" onclick="closeArticle()">← Voltar</button>
+    <span class="badge badge-green" style="margin-bottom:.75rem;display:inline-block">FUTEBOL</span>
+    <h1>Mbappé assina hat-trick histórico no Clássico: Real Madrid elimina Barcelona da Champions</h1>
+    <p class="article-sub">Com três golos em 23 minutos, o avançado francês brilhou no Santiago Bernabéu numa noite inesquecível</p>
+    <div class="article-author">
+      <img src="https://i.pravatar.cc/60?img=8" alt="">
+      <div><strong>Carlos Mendes</strong><br><span>Correspondente em Madrid • 29 Abr 2026 • 8 min</span></div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=1200&q=80" alt="" class="article-hero-img">
+    <div class="article-body">
+      <p>Numa noite que ficará gravada na memória de todos os amantes do futebol, Kylian Mbappé protagonizou uma exibição de gala no Santiago Bernabéu, destruindo o sonho do Barcelona de alcançar as meias-finais da UEFA Champions League.</p>
+      <p>O avançado francês marcou os três golos da vitória madrilena entre os minutos 34 e 57, num intervalo de apenas 23 minutos que deixou os catalães em silêncio.</p>
+      <blockquote>"Esta é a noite pela qual trabalhei toda a minha carreira. O Real Madrid e os seus adeptos merecem este momento." <cite>— Kylian Mbappé</cite></blockquote>
+      <h2>Reacção de Hansi Flick</h2>
+      <p>O técnico alemão mostrou-se desapontado no final, elogiando a exibição adversária: "Cometemos erros que uma equipa como o Real Madrid não perdoa. Mbappé foi incrível esta noite."</p>
+    </div>
+    <div class="article-gallery">
+      <img src="https://images.unsplash.com/photo-1601170219730-c5c9b03c0f67?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1459865264687-595d652de67e?w=400&q=80" alt="">
+      <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&q=80" alt="">
+    </div>
+    <!-- Comments -->
+    <div class="comments-section">
+      <h3>Comentários (<span id="commCount">4</span>)</h3>
+      <div class="comment-form">
+        <input type="text" id="commName" placeholder="O teu nome (opcional)">
+        <textarea id="commText" placeholder="Escreve o teu comentário…" rows="3"></textarea>
+        <button onclick="addComment()">Comentar</button>
+      </div>
+      <div id="commentsList">
+        <div class="comment-item">
+          <img src="https://i.pravatar.cc/40?img=12" alt="">
+          <div class="comment-body">
+            <div class="comment-top"><strong>FutFanatico_PT</strong><span>Há 15min</span></div>
+            <p>Que noite histórica! Mbappé é simplesmente outro nível 🔥</p>
+            <button class="like-btn" onclick="toggleLike(this)"><span class="like-icon">♡</span> <span class="like-count">142</span></button>
+          </div>
+        </div>
+        <div class="comment-item">
+          <img src="https://i.pravatar.cc/40?img=33" alt="">
+          <div class="comment-body">
+            <div class="comment-top"><strong>MadridForever</strong><span>Há 28min</span></div>
+            <p>O melhor hat-trick que vi desde os tempos do Cristiano. Bernabéu em delírio total!</p>
+            <button class="like-btn" onclick="toggleLike(this)"><span class="like-icon">♡</span> <span class="like-count">89</span></button>
+          </div>
+        </div>
+        <div class="comment-item">
+          <img src="https://i.pravatar.cc/40?img=47" alt="">
+          <div class="comment-body">
+            <div class="comment-top"><strong>BarçaEterna</strong><span>Há 42min</span></div>
+            <p>Parabéns ao Real Madrid. Foram melhores esta noite. Voltaremos mais fortes.</p>
+            <button class="like-btn" onclick="toggleLike(this)"><span class="like-icon">♡</span> <span class="like-count">67</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="logo"><span class="logo-box">SPORT</span><span class="logo-text" style="color:#fff">HUB</span></div>
+    <div class="footer-links">
+      <a href="#">Sobre Nós</a><a href="#">Privacidade</a><a href="#">Termos</a><a href="#">Contacto</a><a href="#">Publicidade</a>
+    </div>
+    <p>© 2026 SportHub. Todos os direitos reservados.</p>
+  </div>
+</footer>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
